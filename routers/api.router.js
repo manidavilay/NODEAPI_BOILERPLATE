@@ -33,11 +33,11 @@ Routes definition
                 router.get('/:endpoint', (req, res) => {
                     // Set MySQL connection
                     const connection = mysql.createConnection({
-                        host     : 'localhost',
-                        port     :  8889,
-                        user     : 'root',
-                        password : 'root',
-                        database : 'api-node'
+                        host : process.env.MYSQL_HOST,
+                        port : process.env.MYSQL_POST,
+                        user : process.env.MYSQL_USER,
+                        password : process.env.MYSQL_PASS,
+                        database : process.env.MYSQL_DB
                     })
                     
                     // Connect the DB
